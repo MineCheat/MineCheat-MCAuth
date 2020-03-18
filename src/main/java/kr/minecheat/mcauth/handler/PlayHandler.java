@@ -38,7 +38,7 @@ public class PlayHandler extends PacketHandler {
         sendPacket(new PacketPlayOut3FPluginChannel("MC|Brand","MineCheat"));
         sendPacket(new PacketPlayOut41ServerDifficulty(Difficulty.PEACEFUL));
         sendPacket(new PacketPlayOut05SpawnPosition(new Location(8, 32, 8)));
-        sendPacket(new PacketPlayOut39PlayerAbilities((byte) PlayerAbilities.INVULNERABLE, 1, 0.1f));
+        sendPacket(new PacketPlayOut39PlayerAbilities((byte) PlayerAbilities.INVULNERABLE, 0, 0.1f));
         sendPacket(new PacketPlayOut09HeldItemChange((byte) 0));
         sendPacket(new PacketPlayOut02Chat(new Chat.Builder().setText("ㅊㅋㅊㅋ").build(), ChatPosition.SYSTEM_MESSAGE));
         PlayerListItem item = new PlayerListItem.Builder()

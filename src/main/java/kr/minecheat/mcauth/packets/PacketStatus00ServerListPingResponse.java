@@ -30,7 +30,6 @@ public class PacketStatus00ServerListPingResponse extends PacketData {
     @Override
     public byte[] writePacket() throws Exception {
         String str = Server.getMapper().writeValueAsString(response);
-        System.out.println(str);
         byte[] bytes = packetIO.getDataWriter(String.class).write(str);
         return bytes;
     }

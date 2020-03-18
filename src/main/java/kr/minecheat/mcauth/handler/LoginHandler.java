@@ -43,7 +43,6 @@ public class LoginHandler extends PacketHandler {
             verify_token = EncryptionUtils.generateRandomByteArray(16);
 
 
-            System.out.println("looks like success but I will disconnect");
             PacketLogin01EncryptionRequest pl01er = new PacketLogin01EncryptionRequest(Server.getServerKeys().getPublic(), verify_token);
             sendPacket(pl01er);
             return;
