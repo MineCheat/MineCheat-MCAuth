@@ -16,6 +16,7 @@ public class PacketDataRegistry {
         register(new PacketLogin01EncryptionRequest());
         register(new PacketLogin01EncryptionResponse());
         register(new PacketLogin03SetCompression());
+        register(new PacketPlay00KeepAlive());
     }
 
     private static void register(PacketData packet) {

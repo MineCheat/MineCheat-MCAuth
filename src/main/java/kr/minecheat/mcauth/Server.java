@@ -19,6 +19,8 @@ import lombok.Getter;
 
 import java.security.KeyPair;
 import java.security.NoSuchAlgorithmException;
+import java.util.Random;
+import java.util.Timer;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -29,6 +31,10 @@ public class Server {
     private static final ObjectMapper mapper = new ObjectMapper();
     @Getter
     private static final ExecutorService threadPool = Executors.newCachedThreadPool();
+    @Getter
+    private static final Timer keepAlivetimer = new Timer();
+    @Getter
+    private static final Random random = new Random();
 
     @Getter
     private static KeyPair serverKeys;

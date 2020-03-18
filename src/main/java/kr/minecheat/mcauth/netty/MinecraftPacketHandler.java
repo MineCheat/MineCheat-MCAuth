@@ -6,6 +6,8 @@ import io.netty.channel.SimpleChannelInboundHandler;
 import kr.minecheat.mcauth.handler.LoginHandler;
 import kr.minecheat.mcauth.handler.PlayHandler;
 import kr.minecheat.mcauth.handler.ServerPingHandler;
+import kr.minecheat.mcauth.mcdata.Chat;
+import kr.minecheat.mcauth.mcdata.UserData;
 import kr.minecheat.mcauth.packets.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -66,4 +68,26 @@ public class MinecraftPacketHandler extends SimpleChannelInboundHandler<PacketHe
         ChannelFuture f = handlerContext.writeAndFlush(pHeader);
         return f;
     }
+
+
+    public void disconnect(String c) {
+        disconnect(new Chat.Builder().setText(c).build());
+    }
+
+    public void disconnect(Chat c) {
+        PacketHeader pHeader = new PacketHeader();
+        pHeader.setData(new PacketLogin00Disconnect(c));
+        pHeader.setPacketId(pHeader.getData().getPacketID());
+
+        try {
+            sendPacket(pHeader).addListener((fu) -> handlerContext.close());
+        } catch (Exception e) {
+            e.printStackTrace();
+            handlerContext.close();
+        }
+    }
+
+    @Getter
+    @Setter
+    private UserData userData;
 }

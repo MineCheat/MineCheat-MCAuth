@@ -63,35 +63,21 @@ public class LoginHandler extends PacketHandler {
             MojangUtils.checkValidity(userData.getUsername(), weirdHash).thenAccept(mojangUser -> {
                 userData.setProperties(mojangUser.getProperties());
                 if (!mojangUser.getName().equalsIgnoreCase(userData.getUsername())) {
-                    PacketLogin00Disconnect disconnect = new PacketLogin00Disconnect(new Chat.Builder().setText("어이 너 정품 맞니?").build());
-                    try {
-                        sendPacket(disconnect);
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
+                    nettyHandler.disconnect("정품 맞음?");
                     return;
                 }
                 userData.setUid(MojangUtils.mojangUIDtoJavaUID(mojangUser.getId()));
+                nettyHandler.setUserData(userData);
                 try {
                     sendPacket(new PacketLogin03SetCompression());
                     sendPacket(new PacketLogin02LoginSuccess(userData.getUsername(), userData.getUid().toString()));
                     if (nettyHandler.getCurrentState() == PacketState.LOGIN) nettyHandler.setCurrentState(PacketState.PLAY);
                 } catch (Exception e) {
                     e.printStackTrace();
-                    PacketLogin00Disconnect disconnect = new PacketLogin00Disconnect(new Chat.Builder().setText("서버 에러").build());
-                    try {
-                        sendPacket(disconnect);
-                    } catch (Exception e2) {
-                        e.printStackTrace();
-                    }
+                    nettyHandler.disconnect("서버 에러");
                 }
             }).exceptionally(t -> {
-                PacketLogin00Disconnect disconnect = new PacketLogin00Disconnect(new Chat.Builder().setText("어이 너 정품 맞니?").build());
-                try {
-                    sendPacket(disconnect);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
+                nettyHandler.disconnect("정품 맞음?");
                 return null;
             });
 
