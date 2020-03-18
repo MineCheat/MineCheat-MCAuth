@@ -30,7 +30,7 @@ public class PacketPlayOut26MapChunkBulkButDeveloperIsLazyAndRefusingToImplement
     }
 
     public PacketPlayOut26MapChunkBulkButDeveloperIsLazyAndRefusingToImplement() {
-        super(0, "MapChunkBulkButDeveloperIsLazyAndRefusingToImplement", PacketState.PLAY, PacketType.CLIENTBOUND);
+        super(0x26, "MapChunkBulkButDeveloperIsLazyAndRefusingToImplement", PacketState.PLAY, PacketType.CLIENTBOUND);
     }
 
     @Override

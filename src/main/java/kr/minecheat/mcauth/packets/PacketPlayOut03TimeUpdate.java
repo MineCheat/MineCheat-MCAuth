@@ -4,6 +4,7 @@ import io.netty.buffer.ByteBuf;
 import kr.minecheat.mcauth.mcdata.VarLong;
 
 import java.nio.ByteBuffer;
+import java.util.logging.LoggingPermission;
 
 public class PacketPlayOut03TimeUpdate extends PacketData {
 
@@ -27,8 +28,8 @@ public class PacketPlayOut03TimeUpdate extends PacketData {
 
     @Override
     public byte[] writePacket() throws Exception {
-        byte[] f1 = packetIO.getDataWriter(VarLong.class).write(new VarLong(time));
-        byte[] f2 = packetIO.getDataWriter(VarLong.class).write(new VarLong(world));
+        byte[] f1 = packetIO.getDataWriter(Long.class).write((time));
+        byte[] f2 = packetIO.getDataWriter(Long.class).write((world));
         ByteBuffer buf = ByteBuffer.allocate(f1.length + f2.length);
         buf.put(f1);
         buf.put(f2);
