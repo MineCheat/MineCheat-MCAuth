@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fd2212df-ce2c-4651-8e31-9d517b98d938" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/kr/minecheat/mcauth/packets/PacketPlayIn01ChatMessage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/kr/minecheat/mcauth/handler/PlayHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/minecheat/mcauth/handler/PlayHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/kr/minecheat/mcauth/mcdata/Chat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/minecheat/mcauth/mcdata/Chat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/kr/minecheat/mcauth/mcdata/ChatClickEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/minecheat/mcauth/mcdata/ChatClickEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/kr/minecheat/mcauth/mcdata/ChatColor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/minecheat/mcauth/mcdata/ChatColor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/kr/minecheat/mcauth/mcdata/ChatHoverEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/minecheat/mcauth/mcdata/ChatHoverEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/kr/minecheat/mcauth/packets/PacketDataRegistry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/minecheat/mcauth/packets/PacketDataRegistry.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/kr/minecheat/mcauth/packets/PacketPlayIn04PlayerPosition.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/kr/minecheat/mcauth/packets/PacketPlayOut02Chat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/minecheat/mcauth/packets/PacketPlayOut02Chat.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

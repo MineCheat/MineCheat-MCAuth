@@ -34,7 +34,7 @@ public class PlayHandler extends PacketHandler {
                                     .setBold(true)
                                     .setColor(ChatColor.LIGHT_GREEN)
                                     .setHoverEvent(new ChatHoverEvent(ChatHoverEvent.Action.SHOW_TEXT, new Chat.Builder().setText("복사하기").build()))
-                                    .setClickEvent(new ChatClickEvent(ChatClickEvent.Action.RUN_COMMAND, "/test")).build()
+                                    .setClickEvent(new ChatClickEvent(ChatClickEvent.Action.REPLACE_CHATBOX, chat)).build()
                     )
             ).build(), ChatPosition.SYSTEM_MESSAGE));
         }
