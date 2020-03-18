@@ -2,31 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fd2212df-ce2c-4651-8e31-9d517b98d938" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/kr/minecheat/mcauth/mcdata/Difficulty.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/kr/minecheat/mcauth/mcdata/Dimension.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/kr/minecheat/mcauth/mcdata/GameMode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/kr/minecheat/mcauth/mcdata/LevelType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/kr/minecheat/mcauth/mcdata/PlayerAbilities.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/kr/minecheat/mcauth/packetIO/impls/PacketUUIDIO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/kr/minecheat/mcauth/packets/PacketPlayOut01JoinGame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/kr/minecheat/mcauth/packets/PacketPlayOut05SpawnPosition.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/kr/minecheat/mcauth/packets/PacketPlayOut39PlayerAbilities.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/kr/minecheat/mcauth/packets/PacketPlayOut3FPluginChannel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/kr/minecheat/mcauth/packets/PacketPlayOut40Disconnect.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/kr/minecheat/mcauth/packets/PacketPlayOut41ServerDifficulty.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/kr/minecheat/mcauth/handler/LoginHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/minecheat/mcauth/handler/LoginHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/kr/minecheat/mcauth/handler/PlayHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/minecheat/mcauth/handler/PlayHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/kr/minecheat/mcauth/netty/MinecraftPacketDecoder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/minecheat/mcauth/netty/MinecraftPacketDecoder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/kr/minecheat/mcauth/netty/MinecraftPacketEncoder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/minecheat/mcauth/netty/MinecraftPacketEncoder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/kr/minecheat/mcauth/netty/MinecraftPacketEncrypter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/minecheat/mcauth/netty/MinecraftPacketEncrypter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/kr/minecheat/mcauth/netty/MinecraftPacketHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/minecheat/mcauth/netty/MinecraftPacketHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/kr/minecheat/mcauth/packetIO/impls/PacketDataIOProviderImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/minecheat/mcauth/packetIO/impls/PacketDataIOProviderImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/kr/minecheat/mcauth/packetIO/impls/PacketStringIO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/minecheat/mcauth/packetIO/impls/PacketStringIO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/kr/minecheat/mcauth/packets/PacketLogin00Disconnect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/minecheat/mcauth/packets/PacketLogin00Disconnect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/kr/minecheat/mcauth/packets/PacketLogin01EncryptionRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/minecheat/mcauth/packets/PacketLogin01EncryptionRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/kr/minecheat/mcauth/packets/PacketLogin02LoginSuccess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/minecheat/mcauth/packets/PacketLogin02LoginSuccess.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/kr/minecheat/mcauth/packets/PacketPlay00KeepAlive.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/minecheat/mcauth/packets/PacketPlay00KeepAlive.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

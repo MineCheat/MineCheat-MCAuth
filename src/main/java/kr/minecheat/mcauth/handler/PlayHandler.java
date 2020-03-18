@@ -1,9 +1,9 @@
 package kr.minecheat.mcauth.handler;
 
 import kr.minecheat.mcauth.Server;
+import kr.minecheat.mcauth.mcdata.*;
 import kr.minecheat.mcauth.netty.MinecraftPacketHandler;
-import kr.minecheat.mcauth.packets.PacketHeader;
-import kr.minecheat.mcauth.packets.PacketPlay00KeepAlive;
+import kr.minecheat.mcauth.packets.*;
 
 import java.util.TimerTask;
 
@@ -28,10 +28,16 @@ public class PlayHandler extends PacketHandler {
         }
     }
 
-    public void initiate() {
+    public void initiate() throws Exception {
         willSendKeepAlive = System.currentTimeMillis() + 15000;
         willReceiveKeepAliveBefore = System.currentTimeMillis() + 30000;
         Server.getKeepAlivetimer().schedule(new KeepAliveTask(), 1000, 1000);
+
+        sendPacket(new PacketPlayOut01JoinGame(16, GameMode.SURVIVAL, Dimension.OVERWORLD, Difficulty.PEACEFUL, 20, LevelType.FLAT, true));
+        sendPacket(new PacketPlayOut3FPluginChannel("MC|Brand","MineCheat"));
+        sendPacket(new PacketPlayOut41ServerDifficulty(Difficulty.PEACEFUL));
+        sendPacket(new PacketPlayOut05SpawnPosition(new Location(0, 64, 0)));
+        sendPacket(new PacketPlayOut39PlayerAbilities((byte) PlayerAbilities.INVULNERABLE, 1, 1));
     }
 
     public class KeepAliveTask extends TimerTask {
