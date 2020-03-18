@@ -2,8 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fd2212df-ce2c-4651-8e31-9d517b98d938" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/kr/minecheat/mcauth/mcdata/ChatPosition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/kr/minecheat/mcauth/mcdata/PlayerListItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/kr/minecheat/mcauth/packets/PacketPlayOut02Chat.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/kr/minecheat/mcauth/packets/PacketPlayOut08PlayerPositionAndLook.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/kr/minecheat/mcauth/packets/PacketPlayOut09HeldItemChange.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/kr/minecheat/mcauth/packets/PacketPlayOut38PlayerListItem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/kr/minecheat/mcauth/handler/PlayHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/minecheat/mcauth/handler/PlayHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/kr/minecheat/mcauth/packets/PacketDataRegistry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/minecheat/mcauth/packets/PacketDataRegistry.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

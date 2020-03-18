@@ -23,6 +23,10 @@ public class PacketDataRegistry {
         register(new PacketPlayOut39PlayerAbilities());
         register(new PacketPlayOut40Disconnect());
         register(new PacketPlayOut41ServerDifficulty());
+        register(new PacketPlayOut02Chat());
+        register(new PacketPlayOut08PlayerPositionAndLook());
+        register(new PacketPlayOut09HeldItemChange());
+        register(new PacketPlayOut38PlayerListItem());
     }
 
     private static void register(PacketData packet) {
