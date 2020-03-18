@@ -27,6 +27,7 @@ public class PacketDataRegistry {
         register(new PacketPlayOut08PlayerPositionAndLook());
         register(new PacketPlayOut09HeldItemChange());
         register(new PacketPlayOut38PlayerListItem());
+        register(new PacketPlayOut26MapChunkBulkButDeveloperIsLazyAndRefusingToImplement());
     }
 
     private static void register(PacketData packet) {
