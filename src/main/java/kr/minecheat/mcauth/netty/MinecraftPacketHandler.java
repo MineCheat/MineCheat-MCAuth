@@ -30,7 +30,11 @@ public class MinecraftPacketHandler extends SimpleChannelInboundHandler<PacketHe
     public void setCurrentState(PacketState state) {
         this.currentState = state;
         if (currentState == PacketState.PLAY) {
-            playHandler.initiate();
+            try {
+                playHandler.initiate();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
     }
 
