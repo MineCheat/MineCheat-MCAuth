@@ -14,6 +14,6 @@ public class PlayHandler extends PacketHandler {
     }
 
     void initiate() {
-        
+
     }
 }
