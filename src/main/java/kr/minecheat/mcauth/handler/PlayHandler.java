@@ -38,6 +38,14 @@ public class PlayHandler extends PacketHandler {
         sendPacket(new PacketPlayOut41ServerDifficulty(Difficulty.PEACEFUL));
         sendPacket(new PacketPlayOut05SpawnPosition(new Location(0, 64, 0)));
         sendPacket(new PacketPlayOut39PlayerAbilities((byte) PlayerAbilities.INVULNERABLE, 1, 1));
+        sendPacket(new PacketPlayOut09HeldItemChange((byte) 0));
+        sendPacket(new PacketPlayOut02Chat(new Chat.Builder().setText("ㅊㅋㅊㅋ").build(), ChatPosition.SYSTEM_MESSAGE));
+        PlayerListItem item = new PlayerListItem.Builder()
+                                        .setAction(PlayerListItem.Action.ADD)
+                                        .addActionValue(new PlayerListItem.ActionValue.AddPlayer(nettyHandler.getUserData().getUid(), nettyHandler.getUserData().getUsername(), nettyHandler.getUserData().getProperties(), GameMode.SURVIVAL, 10, null)).build();
+        sendPacket(new PacketPlayOut38PlayerListItem(item));
+        sendPacket(new PacketPlayOut38PlayerListItem(item));
+        sendPacket(new PacketPlayOut08PlayerPositionAndLook(0, 64, 0, 0, 90, (byte) 0));
     }
 
     public class KeepAliveTask extends TimerTask {

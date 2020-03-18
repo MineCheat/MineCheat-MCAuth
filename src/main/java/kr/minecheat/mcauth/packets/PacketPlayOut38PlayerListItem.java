@@ -5,17 +5,19 @@ import kr.minecheat.mcauth.mcdata.MojangUser;
 import kr.minecheat.mcauth.mcdata.PlayerListItem;
 import kr.minecheat.mcauth.mcdata.VarInt;
 
-import javax.lang.model.element.VariableElement;
-
 import java.nio.ByteBuffer;
-import java.util.UUID;
 
 public class PacketPlayOut38PlayerListItem extends PacketData {
 
-    private PlayerListItem playerListitem;
+    private PlayerListItem playerListItem;
 
     PacketPlayOut38PlayerListItem() {
         super(0x38, "PLAYER_LIST_ITEM", PacketState.PLAY, PacketType.CLIENTBOUND);
+    }
+
+    public PacketPlayOut38PlayerListItem(PlayerListItem playerListItem) {
+        this();
+        this.playerListItem = playerListItem;
     }
 
     @Override
@@ -26,16 +28,16 @@ public class PacketPlayOut38PlayerListItem extends PacketData {
     @Override
     public byte[] writePacket() throws Exception {
 
-        PlayerListItem.Action action = playerListitem.getAction();
+        PlayerListItem.Action action = playerListItem.getAction();
 
         byte[] f1 = packetIO.getDataWriter(VarInt.class).write(new VarInt(action.getId()));
-        byte[] f2 = packetIO.getDataWriter(VarInt.class).write(new VarInt(playerListitem.getActions().size()));
+        byte[] f2 = packetIO.getDataWriter(VarInt.class).write(new VarInt(playerListItem.getActions().size()));
 
 
         int lengths = 0;
-        byte[][] f3 = new byte[playerListitem.getActions().size()][];
+        byte[][] f3 = new byte[playerListItem.getActions().size()][];
         for (int i = 0 ; i < f3.length; i++) {
-            PlayerListItem.ActionValue actionValue = playerListitem.getActions().get(i);
+            PlayerListItem.ActionValue actionValue = playerListItem.getActions().get(i);
             if (actionValue.getAction() != action) throw new Exception("who made this mess");
 
             byte[] uid = packetIO.getDataWriter(java.util.UUID.class).write(actionValue.getUuid());

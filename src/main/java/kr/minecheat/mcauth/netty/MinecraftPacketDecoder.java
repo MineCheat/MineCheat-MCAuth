@@ -37,6 +37,9 @@ public class MinecraftPacketDecoder extends MessageToMessageDecoder<ByteBuf> {
         } catch (IllegalAccessException | InstantiationException e) {
             e.printStackTrace();
             return;
+        } catch (NullPointerException e) {
+            System.out.println("couldn't find handler");
+            return;
         }
 
         try {
