@@ -5,6 +5,7 @@ import kr.minecheat.mcauth.mcdata.*;
 import kr.minecheat.mcauth.netty.MinecraftPacketHandler;
 import kr.minecheat.mcauth.packets.*;
 
+import java.util.Arrays;
 import java.util.TimerTask;
 
 public class PlayHandler extends PacketHandler {
@@ -25,7 +26,17 @@ public class PlayHandler extends PacketHandler {
             } else if (lastKeepAlive == null) {
                 recievedKeepAlive = true;
             }
-        } else if (packetHeader.getData() instanceof PacketPlayIn04PlayerPosition) {
+        } else if (packetHeader.getData() instanceof PacketPlayIn01ChatMessage) {
+            String chat = ((PacketPlayIn01ChatMessage) packetHeader.getData()).getChat();
+            sendPacket(new PacketPlayOut02Chat(new Chat.Builder().setText(chat).setBold(true).setExtra(
+                    Arrays.asList(
+                            new Chat.Builder().setText("복사하기")
+                                    .setBold(true)
+                                    .setColor(ChatColor.LIGHT_GREEN)
+                                    .setHoverEvent(new ChatHoverEvent(ChatHoverEvent.Action.SHOW_TEXT, new Chat.Builder().setText("복사하기").build()))
+                                    .setClickEvent(new ChatClickEvent(ChatClickEvent.Action.RUN_COMMAND, "/test")).build()
+                    )
+            ).build(), ChatPosition.SYSTEM_MESSAGE));
         }
     }
 
@@ -40,7 +51,7 @@ public class PlayHandler extends PacketHandler {
         sendPacket(new PacketPlayOut05SpawnPosition(new Location(8, 32, 8)));
         sendPacket(new PacketPlayOut39PlayerAbilities((byte) PlayerAbilities.INVULNERABLE, 0, 0.1f));
         sendPacket(new PacketPlayOut09HeldItemChange((byte) 0));
-        sendPacket(new PacketPlayOut02Chat(new Chat.Builder().setText("ㅊㅋㅊㅋ").build(), ChatPosition.SYSTEM_MESSAGE));
+        sendPacket(new PacketPlayOut02Chat(new Chat.Builder().setText("ㅎㅇㅎㅇ").build(), ChatPosition.SYSTEM_MESSAGE));
         PlayerListItem item = new PlayerListItem.Builder()
                                         .setAction(PlayerListItem.Action.ADD)
                                         .addActionValue(new PlayerListItem.ActionValue.AddPlayer(nettyHandler.getUserData().getUid(), nettyHandler.getUserData().getUsername(), nettyHandler.getUserData().getProperties(), GameMode.SURVIVAL, 10, null)).build();

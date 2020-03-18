@@ -1,5 +1,6 @@
 package kr.minecheat.mcauth.mcdata;
 
+import com.fasterxml.jackson.annotation.JsonValue;
 import lombok.Data;
 import lombok.Getter;
 
@@ -30,7 +31,7 @@ public enum ChatColor {
         this.name = name;
         this.code = code;
     }
-
+    @JsonValue
     public String toString() {
         return name;
     }

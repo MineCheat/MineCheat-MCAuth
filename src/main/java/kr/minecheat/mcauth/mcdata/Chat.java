@@ -98,6 +98,7 @@ public class Chat {
         insertion = b.insertion;
         clickEvent = b.clickEvent;
         hoverEvent = b.hoverEvent;
+        extra = b.extra;
     }
 
     private String text;

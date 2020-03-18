@@ -1,9 +1,14 @@
 package kr.minecheat.mcauth.mcdata;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonValue;
+import lombok.Data;
 import lombok.Getter;
 
 import java.util.Objects;
 
+@Data
+@JsonInclude(value = JsonInclude.Include.NON_DEFAULT)
 public class ChatHoverEvent {
     private Action action;
     private Chat value;
@@ -26,6 +31,7 @@ public class ChatHoverEvent {
             this.name = name;
         }
 
+        @JsonValue
         public String toString() {
             return name;
         }
