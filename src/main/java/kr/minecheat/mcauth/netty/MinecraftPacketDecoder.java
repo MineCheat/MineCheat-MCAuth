@@ -30,7 +30,6 @@ public class MinecraftPacketDecoder extends MessageToMessageDecoder<ByteBuf> {
         PacketHeader header = new PacketHeader();
         header.setPacketId(varIntReader.read(byteBuf).getValue());
 
-        System.out.println("received : " + header.getPacketId() + " / " +handler.getCurrentState());
         PacketData pd;
         try {
             pd = PacketDataRegistry.getPacketData(header, handler.getCurrentState());
@@ -38,7 +37,6 @@ public class MinecraftPacketDecoder extends MessageToMessageDecoder<ByteBuf> {
             e.printStackTrace();
             return;
         } catch (NullPointerException e) {
-            System.out.println("couldn't find handler");
             return;
         }
 

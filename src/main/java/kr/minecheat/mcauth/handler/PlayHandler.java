@@ -25,6 +25,7 @@ public class PlayHandler extends PacketHandler {
             } else if (lastKeepAlive == null) {
                 recievedKeepAlive = true;
             }
+        } else if (packetHeader.getData() instanceof PacketPlayIn04PlayerPosition) {
         }
     }
 
@@ -33,11 +34,11 @@ public class PlayHandler extends PacketHandler {
         willReceiveKeepAliveBefore = System.currentTimeMillis() + 30000;
         Server.getKeepAlivetimer().schedule(new KeepAliveTask(), 1000, 1000);
 
-        sendPacket(new PacketPlayOut01JoinGame(16, GameMode.SURVIVAL, Dimension.OVERWORLD, Difficulty.PEACEFUL, 20, LevelType.FLAT, true));
+        sendPacket(new PacketPlayOut01JoinGame(16, GameMode.SURVIVAL, Dimension.OVERWORLD, Difficulty.PEACEFUL, 20, LevelType.FLAT, false));
         sendPacket(new PacketPlayOut3FPluginChannel("MC|Brand","MineCheat"));
         sendPacket(new PacketPlayOut41ServerDifficulty(Difficulty.PEACEFUL));
-        sendPacket(new PacketPlayOut05SpawnPosition(new Location(8, 15, 8)));
-        sendPacket(new PacketPlayOut39PlayerAbilities((byte) PlayerAbilities.INVULNERABLE, 1, 1));
+        sendPacket(new PacketPlayOut05SpawnPosition(new Location(8, 32, 8)));
+        sendPacket(new PacketPlayOut39PlayerAbilities((byte) PlayerAbilities.INVULNERABLE, 1, 0.1f));
         sendPacket(new PacketPlayOut09HeldItemChange((byte) 0));
         sendPacket(new PacketPlayOut02Chat(new Chat.Builder().setText("ㅊㅋㅊㅋ").build(), ChatPosition.SYSTEM_MESSAGE));
         PlayerListItem item = new PlayerListItem.Builder()
@@ -45,9 +46,17 @@ public class PlayHandler extends PacketHandler {
                                         .addActionValue(new PlayerListItem.ActionValue.AddPlayer(nettyHandler.getUserData().getUid(), nettyHandler.getUserData().getUsername(), nettyHandler.getUserData().getProperties(), GameMode.SURVIVAL, 10, null)).build();
         sendPacket(new PacketPlayOut38PlayerListItem(item));
         sendPacket(new PacketPlayOut38PlayerListItem(item));
-        sendPacket(new PacketPlayOut08PlayerPositionAndLook(8, 15, 8, 0, 90, (byte) 0));
+        sendPacket(new PacketPlayOut08PlayerPositionAndLook(8, 32, 8, 0, 90, (byte) 0));
         sendPacket(new PacketPlayOut03TimeUpdate(6000,6000));
         sendPacket(new PacketPlayOut26MapChunkBulkButDeveloperIsLazyAndRefusingToImplement());
+        sendPacket(new PacketPlayOut08PlayerPositionAndLook(8, 32, 8, 0, 90, (byte) 0));
+        sendPacket(new PacketPlayOut08PlayerPositionAndLook(8, 32, 8, 0, 90, (byte) 0));
+        sendPacket(new PacketPlayOut08PlayerPositionAndLook(8, 32, 8, 0, 90, (byte) 0));
+        sendPacket(new PacketPlayOut08PlayerPositionAndLook(8, 32, 8, 0, 90, (byte) 0));
+        sendPacket(new PacketPlayOut08PlayerPositionAndLook(8, 32, 8, 0, 90, (byte) 0));
+        sendPacket(new PacketPlayOut08PlayerPositionAndLook(8, 32, 8, 0, 90, (byte) 0));
+        sendPacket(new PacketPlayOut08PlayerPositionAndLook(8, 32, 8, 0, 90, (byte) 0));
+        sendPacket(new PacketPlayOut08PlayerPositionAndLook(8, 32, 8, 0, 90, (byte) 0));
 
     }
 

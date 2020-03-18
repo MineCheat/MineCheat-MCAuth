@@ -12,6 +12,6 @@ public class PacketShortIO implements PacketDataIO<Short> {
 
     @Override
     public byte[] write(Short aShort) {
-        return new byte[] {(byte) ((aShort >> 2) & 0xFF), (byte) (aShort & 0xFF)};
+        return new byte[] {(byte) ((aShort >> 8) & 0xFF), (byte) (aShort & 0xFF)};
     }
 }

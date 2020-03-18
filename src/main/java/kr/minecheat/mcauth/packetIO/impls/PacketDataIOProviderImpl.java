@@ -20,6 +20,7 @@ public class PacketDataIOProviderImpl extends PacketDataIOProvider {
         register(Boolean.class, new PacketBooleanIO());
         register(Byte.class, new PacketByteIO());
         register(Float.class, new PacketFloatIO());
+        register(Double.class, new PacketDoubleIO());
         register(Integer.class, new PacketIntegerIO());
         register(Long.class, new PacketLongIO());
         register(Short.class, new PacketShortIO());

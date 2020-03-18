@@ -13,6 +13,6 @@ public class PacketUnsignedShortIO implements PacketDataIO<UnsignedShort> {
     @Override
     public byte[] write(UnsignedShort integerr) {
         int integer = integerr.getValue();
-        return new byte[] {(byte) ((integer >> 2) & 0xFF), (byte) (integer & 0xFF)};
+        return new byte[] {(byte) ((integer >> 8) & 0xFF), (byte) (integer & 0xFF)};
     }
 }

@@ -23,9 +23,6 @@ public class MinecraftPacketEncoder extends MessageToByteEncoder<PacketHeader> {
         byte[] packetData = packetHeader.getData().writePacket();
         packetHeader.setLength(packetId.length + packetData.length);
         byte[] packetLen = varIntWriter.write(new VarInt(packetHeader.getLength()));
-
-        System.out.println("sent: " + packetHeader.getPacketId() + " / w/ data : "+  bytesToHex(packetData) + " / w/ len: "+bytesToHex(packetLen));
-
         buffer.writeBytes(packetLen);
         buffer.writeBytes(packetId);
         buffer.writeBytes(packetData);

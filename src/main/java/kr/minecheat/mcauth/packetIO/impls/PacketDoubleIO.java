@@ -13,6 +13,7 @@ public class PacketDoubleIO implements PacketDataIO<Double> {
     @Override
     public byte[] write(Double aDouble) {
         Long longBits = Double.doubleToLongBits(aDouble);
+
         return Server.getDataIOProvider().getDataWriter(Long.class).write(longBits);
     }
 }
