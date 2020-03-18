@@ -16,7 +16,7 @@ public class PacketPlay00KeepAlive extends PacketData {
     }
 
     public PacketPlay00KeepAlive(int randomId) {
-        super(0, "KEEP_ALIVE", PacketState.PLAY, PacketType.BOTH);
+        this();
         this.randomId = randomId;
     }
 

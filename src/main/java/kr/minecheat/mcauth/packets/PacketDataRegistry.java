@@ -17,6 +17,12 @@ public class PacketDataRegistry {
         register(new PacketLogin01EncryptionResponse());
         register(new PacketLogin03SetCompression());
         register(new PacketPlay00KeepAlive());
+        register(new PacketPlayOut01JoinGame());
+        register(new PacketPlayOut3FPluginChannel());
+        register(new PacketPlayOut05SpawnPosition());
+        register(new PacketPlayOut39PlayerAbilities());
+        register(new PacketPlayOut40Disconnect());
+        register(new PacketPlayOut41ServerDifficulty());
     }
 
     private static void register(PacketData packet) {

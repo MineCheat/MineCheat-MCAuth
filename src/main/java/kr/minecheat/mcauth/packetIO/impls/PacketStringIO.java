@@ -29,7 +29,6 @@ public class PacketStringIO implements PacketDataIO<String> {
         ByteBuffer byteBuffer = ByteBuffer.allocate(len.length + str.length);
         byteBuffer.put(len);
         byteBuffer.put(str);
-        System.out.println(str.length + ","+s.length());
 
         return byteBuffer.array();
     }

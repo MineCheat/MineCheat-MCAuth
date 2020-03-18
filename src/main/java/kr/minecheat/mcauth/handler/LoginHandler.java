@@ -70,7 +70,7 @@ public class LoginHandler extends PacketHandler {
                 nettyHandler.setUserData(userData);
                 try {
                     sendPacket(new PacketLogin03SetCompression());
-                    sendPacket(new PacketLogin02LoginSuccess(userData.getUsername(), userData.getUid().toString()));
+                    sendPacket(new PacketLogin02LoginSuccess(userData.getUsername(), userData.getUid()));
                     if (nettyHandler.getCurrentState() == PacketState.LOGIN) nettyHandler.setCurrentState(PacketState.PLAY);
                 } catch (Exception e) {
                     e.printStackTrace();

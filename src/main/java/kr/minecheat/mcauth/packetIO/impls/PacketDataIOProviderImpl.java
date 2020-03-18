@@ -7,6 +7,7 @@ import kr.minecheat.mcauth.packetIO.PacketDataReader;
 import kr.minecheat.mcauth.packetIO.PacketDataWriter;
 
 import java.util.HashMap;
+import java.util.UUID;
 
 public class PacketDataIOProviderImpl extends PacketDataIOProvider {
     private static HashMap<Class, PacketDataReader> readers;
@@ -28,6 +29,7 @@ public class PacketDataIOProviderImpl extends PacketDataIOProvider {
         register(VarLong.class, new PacketVarLongIO());
         register(Location.class, new PacketLocationIO());
         register(String.class, new PacketStringIO());
+        register(UUID.class, new PacketUUIDIO());
     }
 
     private void register(Class c, PacketDataIO io) {

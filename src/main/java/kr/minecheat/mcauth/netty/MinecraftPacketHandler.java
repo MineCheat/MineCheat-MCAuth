@@ -48,6 +48,9 @@ public class MinecraftPacketHandler extends SimpleChannelInboundHandler<PacketHe
         if (currentState != PacketState.PLAY && pd.getPacketState() == PacketState.LOGIN || pd instanceof PacketStatus00ServerListPing && ((PacketStatus00ServerListPing) pd).getNextState() == 2) {
             loginHandler.handlePacket(packetHeader);
         }
+        if (currentState == PacketState.PLAY) {
+            playHandler.handlePacket(packetHeader);
+        }
 
         // FIND HANDLERS AND CALL IT
     }
@@ -76,7 +79,10 @@ public class MinecraftPacketHandler extends SimpleChannelInboundHandler<PacketHe
 
     public void disconnect(Chat c) {
         PacketHeader pHeader = new PacketHeader();
-        pHeader.setData(new PacketLogin00Disconnect(c));
+        if (currentState == PacketState.PLAY)
+            pHeader.setData(new PacketPlayOut40Disconnect(c));
+        else
+            pHeader.setData(new PacketLogin00Disconnect(c));
         pHeader.setPacketId(pHeader.getData().getPacketID());
 
         try {

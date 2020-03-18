@@ -18,7 +18,7 @@ public class PacketLogin01EncryptionRequest extends PacketData {
     }
 
     public PacketLogin01EncryptionRequest(PublicKey publicKey, byte[] verify_token) {
-        super(1, "ENCRYPTION_REQUEST", PacketState.LOGIN, PacketType.CLIENTBOUND);
+        this();
         this.pk = publicKey;
         this.verify_token = verify_token;
     }
