@@ -1,6 +1,8 @@
 package kr.minecheat.mcauth.netty;
 
+import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelFuture;
+import io.netty.channel.ChannelFutureListener;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 import kr.minecheat.mcauth.handler.LoginHandler;
@@ -43,6 +45,10 @@ public class MinecraftPacketHandler extends SimpleChannelInboundHandler<PacketHe
         handlerContext = ctx;
     }
     @Override
+    public void channelInactive(ChannelHandlerContext ctx) {
+        playHandler.cancelKeepAlive();
+    }
+    @Override
     protected void channelRead0(ChannelHandlerContext channelHandlerContext, PacketHeader packetHeader) throws Exception {
 
         PacketData pd = packetHeader.getData();
@@ -55,12 +61,11 @@ public class MinecraftPacketHandler extends SimpleChannelInboundHandler<PacketHe
         if (currentState == PacketState.PLAY) {
             playHandler.handlePacket(packetHeader);
         }
-
-        // FIND HANDLERS AND CALL IT
     }
 
     @Override
     public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
+        disconnect("서버에서 에러가 발생하였습니다");
         cause.printStackTrace();
         ctx.close();
     }
@@ -88,13 +93,17 @@ public class MinecraftPacketHandler extends SimpleChannelInboundHandler<PacketHe
         else
             pHeader.setData(new PacketLogin00Disconnect(c));
         pHeader.setPacketId(pHeader.getData().getPacketID());
-
+        this.handlerContext.channel().config().setAutoRead(false);
         try {
-            sendPacket(pHeader).addListener((fu) -> handlerContext.close());
+            handlerContext.channel().writeAndFlush(pHeader).addListener((future) -> {
+                Thread.sleep(500);
+                handlerContext.close();
+            });
         } catch (Exception e) {
             e.printStackTrace();
             handlerContext.close();
         }
+
     }
 
     @Getter

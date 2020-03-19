@@ -44,4 +44,15 @@ public class EncryptionUtils {
         cipher.init(type, key, new IvParameterSpec(key.getEncoded()));
         return cipher;
     }
+
+
+    private static final String symbols = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+    public static String generateRandomString(int length) {
+        StringBuilder sb = new StringBuilder();
+        int symbolLength = symbols.length();
+        for (int i = 0 ; i < length; i ++)
+            sb.append(symbols.charAt(secureRandom.nextInt(symbolLength)));
+        return sb.toString();
+    }
 }

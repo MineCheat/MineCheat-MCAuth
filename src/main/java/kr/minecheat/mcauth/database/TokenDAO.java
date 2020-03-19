@@ -26,6 +26,7 @@ public class TokenDAO {
             itd.setUser_id(rs.getLong("user_id"));
             itd.setNickname(rs.getString("nickname"));
             itd.setUsername(rs.getString("username"));
+
             return itd;
         }
     }
@@ -36,6 +37,16 @@ public class TokenDAO {
             ps.setBytes(1, toBytes(itd.getMinecraftUUID()));
             ps.setString(2, itd.getTokenB());
             ps.setLong(3, itd.getId());
+
+            return 1 == ps.executeUpdate();
+        }
+    }
+
+    public static boolean deleteToken(IntegrationTokenData itd) throws SQLException {
+        try (Connection conn = Server.getDataSource().getConnection()) {
+
+            PreparedStatement ps = conn.prepareStatement("DELETE FROM minecraft_integration_token where id=?");
+            ps.setLong(1, itd.getId());
 
             return 1 == ps.executeUpdate();
         }

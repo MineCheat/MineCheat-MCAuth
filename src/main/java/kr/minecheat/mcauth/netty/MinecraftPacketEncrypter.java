@@ -32,4 +32,6 @@ public class MinecraftPacketEncrypter extends MessageToByteEncoder<ByteBuf> {
         byte[] write = this.cipher.update(read, 0,read.length);
         writeBuffer.writeBytes(write);
     }
+
+
 }
