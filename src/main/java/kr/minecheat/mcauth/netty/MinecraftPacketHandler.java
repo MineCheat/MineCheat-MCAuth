@@ -98,6 +98,7 @@ public class MinecraftPacketHandler extends SimpleChannelInboundHandler<PacketHe
             handlerContext.channel().writeAndFlush(pHeader).addListener((future) -> {
                 Thread.sleep(500);
                 handlerContext.close();
+                playHandler.cancelKeepAlive();
             });
         } catch (Exception e) {
             e.printStackTrace();

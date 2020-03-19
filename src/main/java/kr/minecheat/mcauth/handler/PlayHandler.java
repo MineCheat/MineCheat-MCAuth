@@ -164,14 +164,14 @@ public class PlayHandler extends PacketHandler {
                     new Chat.Builder().setText(" 로 접속하여, 인증을 마무리해주세요!\n\n").setColor(ChatColor.LIGHT_WHITE).build(),
                     new Chat.Builder().setText(" ● ").setColor(ChatColor.LIGHT_GRAY).build(),
                     new Chat.Builder().setText("URL: ").setColor(ChatColor.LIGHT_GREEN).build(),
-                    new Chat.Builder().setText("http://minecheat.kr/@me/minecraft_integration?tokenB="+tokenB)
+                    new Chat.Builder().setText("http://www.minecheat.kr:3000/mcAuth/tokenB?tokenB="+tokenB)
                             .setColor(ChatColor.LIGHT_YELLOW)
                             .setHoverEvent(new ChatHoverEvent(ChatHoverEvent.Action.SHOW_TEXT, new Chat.Builder().setText("클릭하여 인증 마무리하기").setColor(ChatColor.LIGHT_WHITE).build()))
-                            .setClickEvent(new ChatClickEvent(ChatClickEvent.Action.OPEN_URL, "http://minecheat.kr/@me/minecraft_integration?tokenB="+tokenB)).build(),
+                            .setClickEvent(new ChatClickEvent(ChatClickEvent.Action.OPEN_URL, "http://www.minecheat.kr:3000/mcAuth/tokenB?tokenB="+tokenB)).build(),
                     new Chat.Builder().setText("\n\n                                ").build(),
                     new Chat.Builder().setText("[  복사  ]").setColor(ChatColor.LIGHT_GREEN).setBold(true)
                             .setHoverEvent(new ChatHoverEvent(ChatHoverEvent.Action.SHOW_TEXT, new Chat.Builder().setText("클릭하여 URL 복사하기").setColor(ChatColor.LIGHT_WHITE).build()))
-                            .setClickEvent(new ChatClickEvent(ChatClickEvent.Action.REPLACE_CHATBOX, "http://minecheat.kr/@me/minecraft_integration?tokenB="+tokenB)).build(),
+                            .setClickEvent(new ChatClickEvent(ChatClickEvent.Action.REPLACE_CHATBOX, "http://www.minecheat.kr:3000/mcAuth/tokenB?tokenB="+tokenB)).build(),
                     new Chat.Builder().setText("\n\n").build(),
                     new Chat.Builder().setText(" ●").setColor(ChatColor.LIGHT_RED).build(),
                     new Chat.Builder().setText(" 30").setColor(ChatColor.LIGHT_YELLOW).build(),
@@ -195,10 +195,8 @@ public class PlayHandler extends PacketHandler {
                     new Chat.Builder().setText("허가").setColor(ChatColor.LIGHT_GREEN).build(),
                     new Chat.Builder().setText(" 하였습니다\n\n").setColor(ChatColor.LIGHT_WHITE).build(),
                     new Chat.Builder().setText("인증 URL: ").setColor(ChatColor.LIGHT_GREEN).build(),
-                    new Chat.Builder().setText("http://minecheat.kr/@me/minecraft_integration?tokenB="+tokenB)
-                            .setColor(ChatColor.LIGHT_YELLOW)
-                            .setHoverEvent(new ChatHoverEvent(ChatHoverEvent.Action.SHOW_TEXT, new Chat.Builder().setText("클릭하여 인증 마무리하기").setColor(ChatColor.LIGHT_WHITE).build()))
-                            .setClickEvent(new ChatClickEvent(ChatClickEvent.Action.OPEN_URL, "http://minecheat.kr/@me/minecraft_integration?tokenB="+tokenB)).build(),
+                    new Chat.Builder().setText("http://www.minecheat.kr:3000/mcAuth/tokenB?tokenB="+tokenB)
+                            .setColor(ChatColor.LIGHT_YELLOW).build(),
                     new Chat.Builder().setText("\n").setColor(ChatColor.LIGHT_GREEN).build()
             )).build();
             nettyHandler.disconnect(c3);
@@ -231,7 +229,7 @@ public class PlayHandler extends PacketHandler {
     public void initiate() throws Exception {
         willSendKeepAlive = System.currentTimeMillis() + 15000;
         willReceiveKeepAliveBefore = System.currentTimeMillis() + 30000;
-        Server.getKeepAlivetimer().schedule(new KeepAliveTask(), 1000, 1000);
+        Server.getKeepAlivetimer().schedule(keepAliveTask = new KeepAliveTask(), 1000, 1000);
 
         sendPacket(new PacketPlayOut01JoinGame(16, GameMode.SURVIVAL, Dimension.OVERWORLD, Difficulty.PEACEFUL, 20, LevelType.FLAT, false));
         sendPacket(new PacketPlayOut3FPluginChannel("MC|Brand","MineCheat"));
@@ -419,7 +417,7 @@ public class PlayHandler extends PacketHandler {
 
     public void cancelKeepAlive() {
         if (keepAliveTask != null)
-        keepAliveTask.cancel();
+            keepAliveTask.cancel();
     }
 
     public class KeepAliveTask extends TimerTask {
@@ -433,7 +431,7 @@ public class PlayHandler extends PacketHandler {
                 }
                 if (willSendKeepAlive < System.currentTimeMillis()) {
                     sendPacket(lastKeepAlive = new PacketPlay00KeepAlive(Server.getRandom().nextInt()));
-                    willSendKeepAlive = System.currentTimeMillis() + 15000;
+                    willSendKeepAlive = System.currentTimeMillis() + 10000;
                     willReceiveKeepAliveBefore = System.currentTimeMillis() + 30000;
                     recievedKeepAlive = false;
                 }

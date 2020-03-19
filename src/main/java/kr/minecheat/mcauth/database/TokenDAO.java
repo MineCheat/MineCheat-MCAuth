@@ -20,7 +20,8 @@ public class TokenDAO {
             IntegrationTokenData itd = new IntegrationTokenData();
             itd.setId(rs.getLong("id"));
             itd.setMinecraftUUID(toUUID(rs.getBytes("minecraftuuid")));
-            itd.setExpiry_date(rs.getDate("expiry_date"));
+            itd.setExpiry_date(rs.getTimestamp("expiry_date"));
+            System.out.println(itd.getExpiry_date());
             itd.setTokenA(rs.getString("tokena"));
             itd.setTokenB(rs.getString("tokenb"));
             itd.setUser_id(rs.getLong("user_id"));

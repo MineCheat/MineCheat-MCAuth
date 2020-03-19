@@ -44,6 +44,7 @@ public class Server {
     @Getter
     private static KeyPair serverKeys;
 
+
     private int port;
 
     public Server(int port) throws NoSuchAlgorithmException {
