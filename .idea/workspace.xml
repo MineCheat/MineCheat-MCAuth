@@ -3,12 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="fd2212df-ce2c-4651-8e31-9d517b98d938" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/kr/minecheat/mcauth/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/minecheat/mcauth/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/kr/minecheat/mcauth/database/TokenDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/minecheat/mcauth/database/TokenDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/kr/minecheat/mcauth/handler/PlayHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/minecheat/mcauth/handler/PlayHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/kr/minecheat/mcauth/netty/MinecraftPacketEncrypter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/minecheat/mcauth/netty/MinecraftPacketEncrypter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/kr/minecheat/mcauth/netty/MinecraftPacketHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/minecheat/mcauth/netty/MinecraftPacketHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/kr/minecheat/mcauth/utils/EncryptionUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/minecheat/mcauth/utils/EncryptionUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/kr/minecheat/mcauth/handler/ServerPingHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/minecheat/mcauth/handler/ServerPingHandler.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
