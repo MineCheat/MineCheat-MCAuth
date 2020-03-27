@@ -28,7 +28,6 @@ public class PacketPlayOut40Disconnect extends PacketData {
     @Override
     public byte[] writePacket() throws Exception {
         String str = Server.getMapper().writeValueAsString(disconnect);
-        System.out.println(str);
         byte[] bytes = packetIO.getDataWriter(String.class).write(str);
         return bytes;
     }

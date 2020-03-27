@@ -62,7 +62,7 @@ public class LoginHandler extends PacketHandler {
             MojangUtils.checkValidity(userData.getUsername(), weirdHash).thenAccept(mojangUser -> {
                 userData.setProperties(mojangUser.getProperties());
                 if (!mojangUser.getName().equalsIgnoreCase(userData.getUsername())) {
-                    nettyHandler.disconnect("정품 맞음?");
+                    nettyHandler.disconnect("입력된 닉네임값이 일치하지 않습니다. 모딩되지 않은 클라이언트로 접속을 시도해주세요.");
                     return;
                 }
                 userData.setUid(MojangUtils.mojangUIDtoJavaUID(mojangUser.getId()));
@@ -73,10 +73,10 @@ public class LoginHandler extends PacketHandler {
                     if (nettyHandler.getCurrentState() == PacketState.LOGIN) nettyHandler.setCurrentState(PacketState.PLAY);
                 } catch (Exception e) {
                     e.printStackTrace();
-                    nettyHandler.disconnect("서버 에러");
+                    nettyHandler.disconnect("접속을 시도하던중 오류가 발생하였습니다. 재접속을 시도해주세요");
                 }
             }).exceptionally(t -> {
-                nettyHandler.disconnect("정품 맞음?");
+                nettyHandler.disconnect("정품으로 접속해주세요");
                 return null;
             });
 
