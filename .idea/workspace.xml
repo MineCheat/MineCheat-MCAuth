@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fd2212df-ce2c-4651-8e31-9d517b98d938" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/MineCheatMCAuth.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MineCheat-MCAuth.iml" beforeDir="false" afterPath="$PROJECT_DIR$/MineCheat-MCAuth.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/kr/minecheat/mcauth/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/minecheat/mcauth/Server.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/kr/minecheat/mcauth/handler/PlayHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/minecheat/mcauth/handler/PlayHandler.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -104,5 +98,16 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/kr/minecheat/mcauth/handler/PlayHandler.java</url>
+          <line>350</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
