@@ -50,7 +50,7 @@ public class Server {
     public Server(int port) throws NoSuchAlgorithmException {
         this.port = port;
         serverKeys = EncryptionUtils.generate1024RSAKey();
-        HikariConfig config = new HikariConfig("/hikariConfig.properties");
+        HikariConfig config = new HikariConfig(System.getProperty("config", "/etc/minecheat_mcauth/hikariConfig.properties"));
         dataSource = new HikariDataSource(config);
     }
 

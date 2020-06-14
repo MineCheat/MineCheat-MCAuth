@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/MineCheat-MCAuth.iml" filepath="$PROJECT_DIR$/MineCheat-MCAuth.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MineCheatMCAuth.iml" filepath="$PROJECT_DIR$/MineCheatMCAuth.iml" />
     </modules>
   </component>
 </project>

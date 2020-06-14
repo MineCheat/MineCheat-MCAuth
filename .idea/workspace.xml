@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fd2212df-ce2c-4651-8e31-9d517b98d938" name="Default Changelist" comment="" />
+    <list default="true" id="fd2212df-ce2c-4651-8e31-9d517b98d938" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/MineCheatMCAuth.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MineCheat-MCAuth.iml" beforeDir="false" afterPath="$PROJECT_DIR$/MineCheat-MCAuth.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/kr/minecheat/mcauth/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/minecheat/mcauth/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/kr/minecheat/mcauth/handler/PlayHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/kr/minecheat/mcauth/handler/PlayHandler.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

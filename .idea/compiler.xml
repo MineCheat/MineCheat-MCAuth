@@ -8,10 +8,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="MineCheat-MCAuth" />
+        <module name="MineCheatMCAuth" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="MineCheat-MCAuth" target="8" />
+      <module name="MineCheatMCAuth" target="8" />
     </bytecodeTargetLevel>
   </component>
 </project>
