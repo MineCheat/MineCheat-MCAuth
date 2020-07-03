@@ -164,14 +164,14 @@ public class PlayHandler extends PacketHandler {
                     new Chat.Builder().setText(" 로 접속하여, 인증을 마무리해주세요!\n\n").setColor(ChatColor.LIGHT_WHITE).build(),
                     new Chat.Builder().setText(" ● ").setColor(ChatColor.LIGHT_GRAY).build(),
                     new Chat.Builder().setText("URL: ").setColor(ChatColor.LIGHT_GREEN).build(),
-                    new Chat.Builder().setText("https:://minecheat.kr/mcAuth/tokenB?tokenB="+tokenB)
+                    new Chat.Builder().setText("https://minecheat.kr/mcAuth/tokenB?tokenB="+tokenB)
                             .setColor(ChatColor.LIGHT_YELLOW)
                             .setHoverEvent(new ChatHoverEvent(ChatHoverEvent.Action.SHOW_TEXT, new Chat.Builder().setText("클릭하여 인증 마무리하기").setColor(ChatColor.LIGHT_WHITE).build()))
-                            .setClickEvent(new ChatClickEvent(ChatClickEvent.Action.OPEN_URL, "https:://minecheat.kr/mcAuth/tokenB?tokenB="+tokenB)).build(),
+                            .setClickEvent(new ChatClickEvent(ChatClickEvent.Action.OPEN_URL, "https://minecheat.kr/mcAuth/tokenB?tokenB="+tokenB)).build(),
                     new Chat.Builder().setText("\n\n                                ").build(),
                     new Chat.Builder().setText("[  복사  ]").setColor(ChatColor.LIGHT_GREEN).setBold(true)
                             .setHoverEvent(new ChatHoverEvent(ChatHoverEvent.Action.SHOW_TEXT, new Chat.Builder().setText("클릭하여 URL 복사하기").setColor(ChatColor.LIGHT_WHITE).build()))
-                            .setClickEvent(new ChatClickEvent(ChatClickEvent.Action.REPLACE_CHATBOX, "https:://minecheat.kr/mcAuth/tokenB?tokenB="+tokenB)).build(),
+                            .setClickEvent(new ChatClickEvent(ChatClickEvent.Action.REPLACE_CHATBOX, "https://minecheat.kr/mcAuth/tokenB?tokenB="+tokenB)).build(),
                     new Chat.Builder().setText("\n\n").build(),
                     new Chat.Builder().setText(" ●").setColor(ChatColor.LIGHT_RED).build(),
                     new Chat.Builder().setText(" 30").setColor(ChatColor.LIGHT_YELLOW).build(),
@@ -195,7 +195,7 @@ public class PlayHandler extends PacketHandler {
                     new Chat.Builder().setText("허가").setColor(ChatColor.LIGHT_GREEN).build(),
                     new Chat.Builder().setText(" 하였습니다\n\n").setColor(ChatColor.LIGHT_WHITE).build(),
                     new Chat.Builder().setText("인증 URL: ").setColor(ChatColor.LIGHT_GREEN).build(),
-                    new Chat.Builder().setText("https:://minecheat.kr/mcAuth/tokenB?tokenB="+tokenB)
+                    new Chat.Builder().setText("https://minecheat.kr/mcAuth/tokenB?tokenB="+tokenB)
                             .setColor(ChatColor.LIGHT_YELLOW).build(),
                     new Chat.Builder().setText("\n").setColor(ChatColor.LIGHT_GREEN).build()
             )).build();
